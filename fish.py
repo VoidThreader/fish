@@ -2,10 +2,10 @@ import tkinter as tk
 from PIL import Image, ImageTk
 from itertools import cycle
 
-def animate(label, frames):
+def animate(label, frames): # required for the gif to work
     frame = next(frames)
     label.config(image=frame)
-    label.after(36, animate, label, frames) # 16ms is the frame duration
+    label.after(36, animate, label, frames) # 36 is the frame duration in milliseconds
 
 window = tk.Tk()
 window.title('feesh')
@@ -16,6 +16,7 @@ window.iconphoto(True, window_icon)
 gif = "assets/fish_spinning.gif"
 gif_file = Image.open(gif)
 
+# appends frames to the frame_index list
 frame_index = []
 for frame in range(gif_file.n_frames):
     gif_file.seek(frame)
