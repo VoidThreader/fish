@@ -9,6 +9,7 @@ def animate(label, frames): # required for the gif to work
 
 window = tk.Tk()
 window.title('feesh')
+window.resizable(False, False)
 
 window_icon = tk.PhotoImage(file="assets/fish.png")
 window.iconphoto(True, window_icon)
